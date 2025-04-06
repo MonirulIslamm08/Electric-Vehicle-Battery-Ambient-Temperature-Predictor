@@ -1,0 +1,14 @@
+{
+    "python.analysis.extraPaths": [
+      "./myenv/Lib/site-packages"
+    ],
+    "python.analysis.diagnosticSeverityOverrides": {
+      "reportMissingImports": "none"
+    },
+    "python.analysis.useLibraryCodeForTypes": true
+  }
+  
+
+
+
+

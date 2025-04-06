@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Battery Life Predictor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f4f4f4;
+    }
+    h2 {
+      color: #333;
+    }
+    form {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .result {
+      text-align: center;
+      font-size: 1.2rem;
+      color: green;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🔋 Electric Vehicle Battery Ambient Temperature Predictor</h2>
+
+  <form action="/predict" method="post">
+    <label for="type">Type:</label>
+    <select name="type" id="type">
+      <option value="charge">charge</option>
+      <option value="discharge">discharge</option>
+    </select>
+
+    <label for="Capacity">Capacity:</label>
+    <input type="text" name="Capacity" required>
+
+    <label for="Re">Re:</label>
+    <input type="text" name="Re" required>
+
+    <label for="Rct">Rct:</label>
+    <input type="text" name="Rct" required>
+
+    <button type="submit">Predict</button>
+
+    {% if prediction_text %}
+      <div class="result">{{ prediction_text }}</div>
+    {% endif %}
+  </form>
+
+</body>
+</html>
